@@ -1,0 +1,41 @@
+﻿@model ProvaAncelmo.Models.ProdutoViewModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Detalhar produtos</h1>
+
+<div>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.codigoProduto)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.codigoProduto)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.preco)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.preco)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.categoria)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.categoria)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.observacao)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.observacao)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.id">Editar produto</a> |
+    <a asp-action="Index">Voltar a listagem de produtos</a>
+</div>

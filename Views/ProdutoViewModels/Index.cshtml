@@ -1,0 +1,53 @@
+﻿@model IEnumerable<ProvaAncelmo.Models.ProdutoViewModel>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Página principal de produtos</h1>
+
+<p>
+    <a asp-action="Create">Criar novo</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.codigoProduto)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.preco)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.categoria)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.observacao)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.codigoProduto)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.preco)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.categoria)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.observacao)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.id">Editar produtos</a> |
+                <a asp-action="Details" asp-route-id="@item.id">Detalhar produtos</a> |
+                <a asp-action="Delete" asp-route-id="@item.id">Remover produtos</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
